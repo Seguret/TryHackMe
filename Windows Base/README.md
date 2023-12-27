@@ -1,2 +1,2 @@
-Nome utente: Administrator
-Parola d’ordine: TryH@ckM3!
+Nome utente: Administrator<br>
+Password: TryH@ckM3!
