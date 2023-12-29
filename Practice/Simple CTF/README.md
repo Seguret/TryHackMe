@@ -38,6 +38,9 @@ l'output indica che ci sono 3 porte aperte:
 -  Port 2222 (Servizio SSH): OpenSSH 7.2p2 è in esecuzione su Ubuntu 4ubuntu2.8 sulla porta 2222/tcp.
 
 ![Alt text](img/image.png)
+```diff
+- Quanti servizi sono in esecuzione sotto la porta 1000?
+```
 
 <span class="Q">
 Quanti servizi sono in esecuzione sotto la porta 1000?
