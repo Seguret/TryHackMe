@@ -41,6 +41,7 @@ l'output indica che ci sono 3 porte aperte:
 ```diff
 - Quanti servizi sono in esecuzione sotto la porta 1000?
 ```
+$${\color{red}Red}$$
 
 <span class="Q">
 Quanti servizi sono in esecuzione sotto la porta 1000?
