@@ -38,24 +38,8 @@ l'output indica che ci sono 3 porte aperte:
 -  Port 2222 (Servizio SSH): OpenSSH 7.2p2 è in esecuzione su Ubuntu 4ubuntu2.8 sulla porta 2222/tcp.
 
 ![Alt text](img/image.png)
-```diff
-- Quanti servizi sono in esecuzione sotto la porta 1000?
-```
+
 $${\color{red}Quanti \space servizi \space sono \space in \space esecuzione \space sotto \space la \space porta \space 1000?} \space {\color{green}2}$$
-
-<span class="Q">
-Quanti servizi sono in esecuzione sotto la porta 1000?
-</span>
-<span class="A">
-2
-</span>
-
-<span class="Q">
-Cosa è in esecuzione sulla porta superiore?
-</span>
-<span class="A">
-SSH
-</span>
 
 L'output di Nmap ci viene di nuovo in aiuto fornendoci anche la risposta della seconda domanda
 
@@ -98,19 +82,9 @@ Il primo link di google è di exploit-db: https://www.exploit-db.com/exploits/46
 
 questa pagina ci fa rispondere alle successive 2 domande
 
-<span class="Q">
-Qual è il CVE che stai usando contro l'applicazione?
-</span>
-<span class="A">
-CVE-2019-9053
-</span>
+$${\color{red}Qual \space è \space il \space CVE \space che \space stai \space usando \space contro \space l'applicazione?} \space {\color{green}CVE-2019-9053}$$
 
-<span class="Q">
-A che tipo di vulnerabilità è vulnerabile l'applicazione?
-</span>
-<span class="A">
-SQLi
-</span>
+$${\color{red}A \space che \space tipo \space di \space vulnerabilità \space è \space vulnerabile \space l'applicazione?} \space {\color{green}SQLi}$$
 
 l'exploit è uno stript in python quindi lo ho capiato e incollato in un file .py
 
@@ -155,19 +129,9 @@ Il risultato è che abbiamo trovato:
 ```
 quindi possiamo rispondere alle seguenti domande:
 
-<span class="Q">
-Qual è la password?
-</span>
-<span class="A">
-secret
-</span>
+$${\color{red}Qual \space è \space la \space password?} \space {\color{green}secret}$$
 
-<span class="Q">
-Dove si può accedere con i dati ottenuti?
-</span>
-<span class="A">
-SSH
-</span>
+$${\color{red}Dove \space si \space può \space accedere \space con \space i \space dati \space ottenuti?} \space {\color{green}SSH}$$
 
 ovviamente proverò subito ad eseguire l'accesso tramite SSH
 
@@ -181,20 +145,11 @@ Ora vediamo dove sono e cosa c'è nella home del utente mitch
 
 quindi posso rispondere alla domanda:
 
-<span class="Q">
-Qual è il flag dell'utente?
-</span>
-<span class="A">
-G00d j0b, keep up!
-</span>
+$${\color{red}Qual \space è \space il \space flag \space dell'utente?} \space {\color{green}G00d \space j0b, \space keep \space up!}$$
 
 è facile rispondere anche a quella dopo dopo:
-<span class="Q">
-C'è qualche altro utente nella home directory? Come si chiama?
-</span>
-<span class="A">
-sunbath
-</span>
+
+$${\color{red}C'è \space qualche \space altro \space utente \space nella \space home \space directory? \space Come \space si \space chiama?} \space {\color{green}sunbath}$$
 
 ![Alt text](img/image-9.png)
 
@@ -205,12 +160,8 @@ per fare questo posso vedere quali binari sono consentiti a mitch con il comando
 ```
 ![Alt text](img/image-10.png)
 
-<span class="Q">
-Cosa puoi sfruttare per generare una shell privilegiata?
-</span>
-<span class="A">
-vim
-</span>
+$${\color{red}Cosa \space puoi \space sfruttare \space per \space generare \space una \space shell \space privilegiata?
+} \space {\color{green}vim}$$
 
 Posso vedere che l'utente "mitch" può eseguire /usr/bin/vim senza una password. Questa informazione mi servirà per rispondere all'ultima domanda.
 
@@ -226,20 +177,8 @@ La documentazione dice che se eseguo questo comando qui posso aumentare i miei p
 ```
 ![Alt text](img/image-12.png)
 
-<span class="Q">
-Che cos'è il flag di radice?
-</span>
-<span class="A">
-W3ll d0n3. You made it!
-</span>
+$${\color{red}Che \space cos'è \space il \space flag \space di \space radice?
+} \space {\color{green}W3ll \space d0n3. \space You \space made \space it!
+}$$
 
 Finita!!!
-
-<style>
-    .Q {
-        font-weight: bold;
-        color: red;}
-    .A {
-    font-weight: bold;
-    color: Green;}
-</style>
