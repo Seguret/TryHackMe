@@ -5,7 +5,7 @@ RootMe è un Capture The Flag (CTF) di livello facile, progettato per sviluppare
 ```sh
 └─$ sudo nmap -p- -sS -A 10.10.152.152
 ```
-![Alt text](image.png)
+![Alt text](img/image.png)
 
 I risultati della scansione rivelano due porte aperte: la porta 22 per SSH e la porta 80 per HTTP. Queste informazioni ci permettono di rispondere a tre domande fondamentali:
 
@@ -20,12 +20,12 @@ $${\color{red}What \space service \space is \space running \space on \space port
 
 Dopo la scansione, ci dirigiamo verso il servizio HTTP sulla porta 80. Nonostante un'animazione accattivante, decidiamo di utilizzare goBuster per individuare eventuali directory nascoste.
 
-![Alt text](image-1.png)
+![Alt text](img/image-1.png)
 
 ```sh
 └─$ gobuster dir -u "http://10.10.152.152:80" -w /usr/share/wordlists/dirb/common.txt
 ```
-![Alt text](image-2.png)
+![Alt text](img/image-2.png)
 
 All'interno della directory "/panel/", scopriamo un'area dedicata al caricamento di file, indicando la possibilità di un potenziale exploit. Sfruttando l'ambiente Apache, carichiamo una reverse shell in PHP dopo averla personalizzata con il nostro indirizzo IP e la porta. Successivamente, mettiamo in ascolto con Netcat prima di interagire con la nostra reverse shell attraverso la directory "/uploads/".
 
@@ -34,20 +34,20 @@ $${\color{red}What \space is \space the \space hidden \space directory?
 
 [https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php]
 
-![Panel](image-3.png)
+![Panel](img/image-3.png)
 
-![Uploads](image-4.png)
+![Uploads](img/image-4.png)
 
 ```sh
 └─$ nc -lnvp 4444
 ```
 Una volta ottenuto l'accesso al sistema, procediamo alla ricerca del file "user.txt".
-![Alt text](image-5.png)
+![Alt text](img/image-5.png)
 
 ```sh
 └─$ find / -name user.txt 2>/dev/null
 ```
-![Alt text](image-6.png)
+![Alt text](img/image-6.png)
 
 $${\color{red}user.txt
 } \space {\color{green}THM\{y0u\_g0t\_a\_sh3ll\}}$$
@@ -59,7 +59,7 @@ Rispondiamo alla prima domanda del Task 4, eseguendo una ricerca dei file con pe
 ```
 Identificando il file "weird" nella directory "/usr/bin/python", approfondiamo ulteriormente l'analisi. Scarichiamo linPEAS sulla nostra macchina e lo trasferiamo al sistema bersaglio attraverso un server web Python temporaneo e in fine lo eseguiremo.
 
-![Alt text](image-8.png)
+![Alt text](img/image-8.png)
 
 $${\color{red}Search \space for \space files \space with \space SUID \space permission, \space which \space file \space is \space weird?
 } \space {\color{green}/usr/bin/python}$$
@@ -80,7 +80,7 @@ L'output di linPEAS evidenzia numerosi riferimenti a "python", aprendo la possib
 ```
 Rispondendo all'ultima domanda del CTF, otteniamo il flag di root:
 
-![Alt text](image-7.png)
+![Alt text](img/image-7.png)
 
 $${\color{red}root.txt
 } \space {\color{green}THM\{pr1v1l3g3_3sc4l4t10n\}}$$
