@@ -49,8 +49,8 @@ Una volta ottenuto l'accesso al sistema, procediamo alla ricerca del file "user.
 ```
 ![Alt text](img/image-6.png)
 
-<span style="color:red">user.txt</span>
-<span style="color:green">THM{y0u_g0t_a_sh3ll}</span>
+$${\color{red}user.txt
+} \space {\color{green}THM\\{y0u\\_g0t\\_a\\_sh3ll\\}}$$
 
 Rispondiamo alla prima domanda del Task 4, eseguendo una ricerca dei file con permessi SUID.
 
