@@ -1,6 +1,5 @@
 # README.md
 
-link utili
 
 - https://shell-storm.org/online/Online-Assembler-and-Disassembler/
 - https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS
